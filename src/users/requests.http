@@ -10,7 +10,7 @@ Content-Type: application/json
 
 
 ### Find a particular user with given ID
-GET http://localhost:3000/auth/48efac01-b3a1-432d-b34b-ea792d9bfc3a
+GET http://localhost:3000/auth/d2772a54-a49b-46f7-b201-3aa4235b7e5c
 
 
 ### Delete a particular user with given ID
