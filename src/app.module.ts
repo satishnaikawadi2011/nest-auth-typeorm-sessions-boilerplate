@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 import { TodosModule } from './todos/todos.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/user.entity';
+import { Todo } from './todos/todo.entity';
 
 @Module({
 	imports:
@@ -14,7 +15,8 @@ import { User } from './users/user.entity';
 				database: 'db.sqlite',
 				entities:
 					[
-						User
+						User,
+						Todo
 					],
 				synchronize: true
 			}),
