@@ -2,6 +2,11 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
+
+interface FindAttrs {
+	email: string;
+	username: string;
+}
 @Injectable()
 export class UsersService {
 	constructor(@InjectRepository(User) private repo: Repository<User>) {}
@@ -14,6 +19,20 @@ export class UsersService {
 
 	findOne(id: string) {
 		return this.repo.findOne(id);
+	}
+
+	find(attrs: Partial<FindAttrs>) {
+		return this.repo.find(attrs);
+	}
+
+	findByEmailOrUsername(email: string, username: string) {
+		return this.repo.find({
+			where:
+				[
+					{ email },
+					{ username }
+				]
+		});
 	}
 
 	async update(id: string, attrs: Partial<User>) {
