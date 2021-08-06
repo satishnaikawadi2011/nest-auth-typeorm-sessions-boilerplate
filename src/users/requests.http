@@ -34,3 +34,6 @@ Content-Type: application/json
 {
     "username":"testUpdated"
 }
+
+### Signout a user
+POST http://localhost:3000/auth/signout
